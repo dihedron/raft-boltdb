@@ -3,8 +3,8 @@ package raftboltdb
 import (
 	"errors"
 
-	"github.com/boltdb/bolt"
 	"github.com/hashicorp/raft"
+	bolt "go.etcd.io/bbolt"
 )
 
 const (
@@ -18,7 +18,7 @@ var (
 	dbLogs = []byte("logs")
 	dbConf = []byte("conf")
 
-	// An error indicating a given key does not exist
+	// ErrKeyNotFound is an error indicating a given key does not exist
 	ErrKeyNotFound = errors.New("not found")
 )
 
